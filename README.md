@@ -22,8 +22,6 @@ See [LICENSE](LICENSE) file for more information.
 
 Contains [middleclass](https://github.com/kikito/middleclass)
 
-External Libraries : ZAM Lib
-
 Made with [LÖVE](https://love2d.org/)
 
 ## Get Started
