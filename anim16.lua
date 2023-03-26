@@ -1,6 +1,12 @@
+anim16s = {
+	VER = 0.6,
+	DESC = "A Simple quickie animation class",
+        NOTE = "Not for Spirtesheet Animations"
+        LICENSE = "MIT"
+}
+
 local class = require("middleclass")
 anim16 = class("anim")
-local anim16s = {}
 local lg = love.graphics
 
 -- ==================================================================
