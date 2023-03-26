@@ -4,6 +4,8 @@
 
 This is a simple animation class I wrote for my personal game.
 
+**NOTE : Not for *SPRITESHEET* Animations**
+
 ## How to Install 
 
 ```lua
