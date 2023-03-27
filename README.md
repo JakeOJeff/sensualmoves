@@ -44,12 +44,6 @@ local anim16 = require('anim16')
 
 See [LICENSE](LICENSE) file for more information.
 
-## Acknowledgments 🙏
-
-Contains [middleclass](https://github.com/kikito/middleclass)
-
-Made with [LÖVE](https://love2d.org/)
-
 ## Get Started
 
 Install the library
@@ -71,7 +65,7 @@ function love.load()
 end
 ```
 
-Update the Animation  ` *Only necessary if values change constantly | eg : chicken:update(character.x, character.y)* ` , and also add an event to start/play the animation
+Update the Animation  `Only necessary if values change constantly | eg : chicken:update(character.x, character.y)` , and also add an event to start/play the animation
 
 ```lua
 function love.update(dt)
@@ -122,4 +116,5 @@ end
 ```
 
 `Output`
+
 ![](https://github.com/JakeOJeff/sensualmoves/blob/main/anim16example.gif)
