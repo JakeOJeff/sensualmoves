@@ -29,7 +29,7 @@ require('anim16')
 | `n` | Frame ID ( ID of Currently Playing Frame ) | **1** |
 | `c` | Current Frame ( Image of Currently Playing Frame | **nil** | 
 
-#### Animation Arguments
+#### Image Arguments
 
 | Argument | Function | Default |
 | --- | --- | --- |
