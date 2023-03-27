@@ -63,26 +63,20 @@ Define a new Object Animation, define the animation's position and number of fra
 
 ```lua
 function love.load()
-    gun = anim16:new("example/",2) -- Defining a new Object 'Gun' 
+    chicken= anim16:new("example/",7) -- Defining a new Object 'chicken' 
     -- Properties
-    gun.x = 50 
-    gun.y = 50
-    gun.speed = 10
-
-    fId = 1 -- Frame ID
-    cImg = 1 -- Current Image
+    chicken.x = 50 
+    chicken.y = 50
+    chicken.speed = 10
 end
 ```
 
-Update the Animation  ` *Only necessary if values change constantly | eg :  gun:update(character.x, character.y)* ` , and also add an event to start/play the animation
+Update the Animation  ` *Only necessary if values change constantly | eg : chicken:update(character.x, character.y)* ` , and also add an event to start/play the animation
 
 ```lua
 function love.update(dt)
-    gun:update() -- Animation update
-   
-    if love.mouse.isDown(1) then -- Mouse Event to play animation
-        fId, cImg =  gun:play(true, dt)
-    end
+    chicken:update() -- Animation update
+    chicken:play(true, dt)
 end
 
 ```
@@ -91,8 +85,40 @@ Draw the Animation
 
 ```lua
 function love.draw()
-    gun:draw() -- Drawing the animation
-    
-    love.graphics.print("Current Frame : "..fId, 50, 150) -- Getting current frame
+    chicken:draw() -- Drawing the animation
 end
 ```
+
+# Sample Example
+
+`main.lua`
+```lua
+require('anim16')
+function love.load()
+    chicken = anim16:new("example/",7) -- Defining a new Object 'chicken' 
+    -- Properties
+    chicken.x = 600 
+    chicken.y = 50
+    chicken.speed = 60
+
+    fId = 1 -- Frame ID
+    cImg = 1 -- Current Image
+end
+
+function love.update(dt)
+    if love.keyboard.isDown("space") then -- Mouse Event to play animation
+        fId, cImg =  chicken:play(true, dt)
+        if fId ~= 1 then -- Checking if Current Frame is not equal to one
+            local walk = chicken.x - 2 -- Determining Chicken walking
+            chicken:update(walk, 50) -- Updating chicken's X coordinate
+        end
+    end
+end
+
+function love.draw()
+    chicken:draw() -- Drawing the animation
+    love.graphics.print("Current Frame : "..fId, 0, 0) -- Getting current frame
+end
+```
+
+`Output`
