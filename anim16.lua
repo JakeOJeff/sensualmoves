@@ -1,7 +1,9 @@
 anim16s = {
 	VER = 0.6,
 	DESC = "A Simple quickie animation class",
+	CHILD = "middleclass OOP",
         LICENSE = "MIT"
+       
 }
 
 local class = require("middleclass")
@@ -27,13 +29,14 @@ function anim16:initialize(position,frames,speed,x,y,rotation, sx, sy)
     -- Loading the Image
     self.table = {}
     for i = 1,self.frames,1 do
-        self.table[i] = love.graphics.newImage(self.position..i..".png") -- Loading based on the number of each frame
+        self.table[i] = lg.newImage(self.position..i..".png") -- Loading based on the number of each frame
     end
 
     self.n = 1 -- Frame ID
     self.c = self.table[self.n] -- Frame Image
 
     table.insert(anim16s, self)
+    
 	return self
 end
 
@@ -44,6 +47,9 @@ function anim16:play(p, dt)
     if p then 
         if self.n < #self.table then
             self.n = self.n + self.speed * dt
+            if self.n > #self.table then
+                self.n = #self.table
+            end
             self.c = self.table[math.floor(self.n)]
         else
             self.n = 1
@@ -70,4 +76,3 @@ end
 function anim16:draw()
     lg.draw(self.c, self.x, self.y,self.r,self.sx,self.sy) -- Making animation visible
 end
-
