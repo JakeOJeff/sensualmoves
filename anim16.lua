@@ -1,18 +1,14 @@
-anim16s = {
+local anim16 = {
 	VER = 0.6,
 	DESC = "A Simple quickie animation class",
-	CHILD = "middleclass OOP",
-        LICENSE = "MIT"
-       
+    LICENSE = "MIT"
 }
 
-local class = require("middleclass")
-anim16 = class("anim")
 local lg = love.graphics
 
 -- ==================================================================
 -- Animation Initialization
-function anim16:initialize(position,frames,speed,x,y,rotation, sx, sy)
+function anim16:new(position,frames,speed,x,y,rotation, sx, sy)
 
     -- Declaring Position, Frames, Speed
     self.position = position -- Location of the image
@@ -35,8 +31,8 @@ function anim16:initialize(position,frames,speed,x,y,rotation, sx, sy)
     self.n = 1 -- Frame ID
     self.c = self.table[self.n] -- Frame Image
 
-    table.insert(anim16s, self)
-    
+    table.insert(anim16, self)
+
 	return self
 end
 
@@ -76,3 +72,5 @@ end
 function anim16:draw()
     lg.draw(self.c, self.x, self.y,self.r,self.sx,self.sy) -- Making animation visible
 end
+
+return anim16
