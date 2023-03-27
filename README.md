@@ -12,6 +12,32 @@ This is a simple animation class I wrote for my personal game.
 require('anim16')
 ```
 
+## Parameters
+
+#### Animation Arguments
+
+| Argument | Function | Default |
+| --- | --- | --- |
+| `position` | File location of the Frames | **nil** |
+| `frames` | Number of frames in the Animation | **nil** | 
+| `speed` | Speed of the Animation ( Frames/Second ) | **nil** |
+
+#### Frame Data points
+
+| Argument | Function | Default |
+| --- | --- | --- |
+| `n` | Frame ID ( ID of Currently Playing Frame ) | **1** |
+| `c` | Current Frame ( Image of Currently Playing Frame | **nil** | 
+
+#### Animation Arguments
+
+| Argument | Function | Default |
+| --- | --- | --- |
+| `x` | X Coordinate | **0** |
+| `y` | Y Coordinate | **0** | 
+| `r` | Image rotation | **0** |
+| `sx` | Scale X | **1** |
+| `sy` | Scale Y | **1** | 
 
 
 ## [License](LICENSE) 🔖
