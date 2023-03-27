@@ -9,7 +9,7 @@ This is a simple animation class I wrote for my personal game.
 ## How to Install 
 
 ```lua
-require('anim16')
+local anim16 = require('anim16')
 ```
 
 ## Parameters
@@ -55,7 +55,7 @@ Made with [LÖVE](https://love2d.org/)
 Install the library
 ```lua
 
-require('anim16')
+local anim16 = require('anim16')
 
 ```
 
@@ -93,7 +93,7 @@ end
 
 `main.lua`
 ```lua
-require('anim16')
+local anim16 = require('anim16')
 function love.load()
     chicken = anim16:new("example/",7) -- Defining a new Object 'chicken' 
     -- Properties
