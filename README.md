@@ -26,10 +26,16 @@ Made with [LÖVE](https://love2d.org/)
 
 ## Get Started
 
+Install the library
 ```lua
 
 require('anim16')
 
+```
+
+Define a new Object Animation, define the animation's position and number of frames
+
+```lua
 function love.load()
     gun = anim16:new("example/",2) -- Defining a new Object 'Gun' 
     -- Properties
@@ -40,15 +46,24 @@ function love.load()
     fId = 1 -- Frame ID
     cImg = 1 -- Current Image
 end
+```
 
+Update the Animation  ` *Only necessary if values change constantly | eg :  gun:update(character.x, character.y)* ` , and also add an event to start/play the animation
+
+```lua
 function love.update(dt)
-    gun:update() -- Animation update [ Only necessary if values change constantly | eg :  gun:update(character.x, character.y) ]
+    gun:update() -- Animation update
    
     if love.mouse.isDown(1) then -- Mouse Event to play animation
         fId, cImg =  gun:play(true, dt)
     end
 end
 
+```
+
+Draw the Animation
+
+```lua
 function love.draw()
     gun:draw() -- Drawing the animation
     
